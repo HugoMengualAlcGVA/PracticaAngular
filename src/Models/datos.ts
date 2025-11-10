@@ -1,5 +1,5 @@
-import {articuloClass} from "./articuloClass";
-export const ARTICULOS : articuloClass[]=[
+import {ArticuloClass} from "./articuloClass";
+export const ARTICULOS : ArticuloClass[]=[
     {
         "id": "m1",
         "nombre": "Galaxy A32",

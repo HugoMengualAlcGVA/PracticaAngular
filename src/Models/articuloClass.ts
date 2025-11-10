@@ -1,4 +1,4 @@
-export class articuloClass{
+export class ArticuloClass{
         "id": string
         "nombre": string
         "categoria": string

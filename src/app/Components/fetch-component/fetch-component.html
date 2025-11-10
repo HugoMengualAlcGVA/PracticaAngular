@@ -1,0 +1,18 @@
+<h3>Articulos con Fetch</h3>
+<div id="contenedor" class="row row-cols-1 row-cols-md-6 g-4">
+    @for(articulo of articulos; track articulo.id){
+    <div class="card">
+        <img src="assets/images/{{ articulo.id }}.jpg" class="card-img-top" />
+        <div class="card-body">
+            <h5 class="card-title">
+                {{ articulo.nombre }} ({{ articulo.unidades }})
+            </h5>
+            <p class="card-text">{{ articulo.descripcion }}</p>
+            <b>
+                <p class="card-text text-center">{{ articulo.precio }}</p>
+            </b>
+        </div>
+        <button class="btn btn-primary">Comprar</button>
+    </div>
+    }
+</div>

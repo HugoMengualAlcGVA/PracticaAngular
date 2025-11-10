@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ARTICULOS } from '../../../Models/datos';
-import { articuloClass } from '../../../Models/articuloClass';
+import { ArticuloClass } from '../../../Models/articuloClass';
 import { CommonModule } from '@angular/common';
 import { ArticulosService } from '../../Services/articulos-service';
 
@@ -12,7 +12,7 @@ import { ArticulosService } from '../../Services/articulos-service';
 })
 
 export class TablaComponent {
-  articulos: articuloClass[] = ARTICULOS;
+  articulos: ArticuloClass[] = ARTICULOS;
 
   constructor(private articulosService: ArticulosService) { }
 
