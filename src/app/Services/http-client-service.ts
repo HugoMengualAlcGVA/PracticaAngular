@@ -6,7 +6,7 @@ import { ArticuloClass } from '../../Models/articuloClass';
 @Injectable({
   providedIn: 'root',
 })
-export class HttpCLientService {
+export class HttpClientService {
   constructor(private http: HttpClient) {}
 
   url = 'http://localhost:3000/articulos';
@@ -19,9 +19,16 @@ export class HttpCLientService {
     return this.http.get<ArticuloClass>(this.url + "/" + id);
   }
 
-  delete(id: String): Boolean{
+  delete(id: String){
     var response: Boolean;
     this.http.delete(this.url+"/"+id).subscribe((r) => console.log(r));
-    return true;
+  }
+
+  getByPrecio(precio: number){
+    return this.http.get<ArticuloClass[]>(this.url+"/?precio_gte="+precio);
+  }
+
+  postArticulo(articulo: ArticuloClass){
+    return this.http.post<ArticuloClass>(this.url, articulo)
   }
 }

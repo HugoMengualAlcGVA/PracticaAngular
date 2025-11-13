@@ -1,10 +1,10 @@
 <div class="d-flex flex-row justify-content-between align-items-center">
     <h1>Tabla y Articulos HttpClient</h1>
-    <button class="btn btn-success h-75">Añadir elemento</button>
+    <button (click)="anyadirElemento()" class="btn btn-success h-75">Añadir elemento</button>
 </div>
-<button class="btn btn-success h-75">Añadir elemento</button>
+<button (click)="getArticulosByPrecio()" class="btn btn-info h-75">Buscar precio mayor a</button>
 
-<table class="table table-dark table-striped">
+<table class="table table-dark table-striped mt-2">
     <thead>
         <tr>
             <th scope="col">ID</th>
@@ -25,7 +25,7 @@
                 <td>{{a.descripcion}}</td>
                 <td>{{a.unidades}}</td>
                 <td>{{a.precio | currency}}</td>
-                <td><button [class]="a.unidades == 0? 'btn bg-secondary':'btn btn-primary'">
+                <td><button (click)="getArticuloById(a.id)" [class]="a.unidades == 0? 'btn bg-secondary':'btn btn-primary'">
                     Ver
                 </button></td>
                 <td><button class="btn btn-danger" (click)="borrarArticulo(a.id)">
@@ -42,7 +42,7 @@
 </table>
 <div id="contenedor" class="row row-cols-1 row-cols-md-6 g-4">
     @for(articulo of articulos; track articulo.id){
-    <div class="card">
+    <div class="card m-3 rounded-4 p-3">
         <img src="assets/images/{{ articulo.id }}.jpg" class="card-img-top" />
         <div class="card-body">
             <h5 class="card-title">

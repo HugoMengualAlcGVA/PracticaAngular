@@ -1,6 +1,14 @@
 {
   "articulos": [
     {
+      "id": "m1",
+      "nombre": "Galaxy A32",
+      "categoria": "Moviles",
+      "descripcion": "4GB + 128GB libre",
+      "unidades": 10,
+      "precio": 229
+    },
+    {
       "id": "m2",
       "nombre": "Oppo A94",
       "categoria": "Moviles",
@@ -49,6 +57,14 @@
       "precio": 300
     },
     {
+      "id": "p1",
+      "categoria": "Portatiles",
+      "nombre": "Asus Zen",
+      "descripcion": "i5 16Gb SSD",
+      "unidades": 10,
+      "precio": 900
+    },
+    {
       "id": "p2",
       "nombre": "HP Pavillion",
       "categoria": "Portatiles",
@@ -81,12 +97,12 @@
       "precio": 450
     },
     {
-      "id": "n34",
-      "nombre": "ihjdgs",
-      "categoria": "dskmldgs",
-      "descripcion": "kjdfns",
-      "unidades": 34,
-      "precio": 54
+      "id": "t3",
+      "nombre": "Samsung UE305",
+      "descripcion": "Full HD, HDR",
+      "categoria": "Televisores",
+      "unidades": 10,
+      "precio": 350
     }
   ]
 }
