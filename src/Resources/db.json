@@ -82,11 +82,19 @@
     },
     {
       "id": "n34",
-      "nombre": "ihjdgs",
-      "categoria": "dskmldgs",
-      "descripcion": "kjdfns",
-      "unidades": 34,
-      "precio": 54
+      "nombre": "P-2343 AMD",
+      "categoria": "Pantalla",
+      "descripcion": "Pantalla 120Hz Oled",
+      "unidades": 15,
+      "precio": 356
+    },
+    {
+      "id": "n4453",
+      "nombre": "fs",
+      "categoria": "fds",
+      "descripcion": "fs",
+      "unidades": null,
+      "precio": null
     }
   ]
 }

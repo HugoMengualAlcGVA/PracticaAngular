@@ -1,18 +1,18 @@
 
 <h3>Articulos</h3>
 <div class="row row-cols-6">
-    @for (ar of articulos; track ar.id) {
+    @for (articulo of articulos; track articulo.id) {
     <div class="card col" style="margin: 2px; padding: 2px;">
-        <img src="assets/images/{{ar.id}}.jpg" class="card-img" alt="Imagen movil">
+        <img src="assets/images/{{articulo.id}}.jpg" class="card-img" alt="Imagen movil">
         <div class="card-body">
-            <h5 class="card-title">{{ar.precio}}</h5>
-            <p class="card-text">{{ar.descripcion}}</p>
-            <p class="card-text">{{ar.unidades}}</p>
+            <h5 class="card-title">{{articulo.precio}}</h5>
+            <p class="card-text">{{articulo.descripcion}}</p>
+            <p class="card-text">{{articulo.unidades}}</p>
             <b>
-                <p class="card-text text-center">{{ar.precio}}</p>
+                <p class="card-text text-center">{{articulo.precio}}</p>
             </b>
         </div>
-        <button [class]="ar.unidades == 0? 'btn btn-danger':'btn btn-primary'" (click)="verArticulos()">
+        <button [class]="articulo.unidades == 0? 'btn btn-danger':'btn btn-primary'" (click)="verArticulos()">
             Comprar
         </button>
     </div>

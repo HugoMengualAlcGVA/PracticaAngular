@@ -3,10 +3,11 @@ import { ArticuloClass } from '../../../Models/articuloClass';
 import { HttpClientService } from '../../Services/http-client-service';
 import { CommonModule } from '@angular/common';
 import { isEmpty } from 'rxjs';
+import { ArticuloCardCompoent } from "../articulo-card-compoent/articulo-card-compoent";
 
 @Component({
   selector: 'app-htttp-client-component',
-  imports: [CommonModule],
+  imports: [CommonModule, ArticuloCardCompoent],
   templateUrl: './htttp-client-component.html',
   styleUrl: './htttp-client-component.scss',
 })
@@ -36,7 +37,21 @@ export class HtttpClientComponent {
     if(precio){
       this.http.getByPrecio(precio).subscribe({
         next: datos => {
-          if(datos.length) console.log(datos)
+          if(datos.length != 0) console.log(datos)
+          else console.log("No hay resultados");
+        }
+        
+      });
+    }else console.log("No se especifico precio");
+    
+  }
+
+  getArticulosByCategoria(){
+    let categoria : string | null = prompt("Dime categoria");
+    if(categoria){
+      this.http.getByCategoria(categoria).subscribe({
+        next: datos => {
+          if(datos.length != 0) console.log(datos)
           else console.log("No hay resultados");
         }
         
@@ -68,5 +83,37 @@ export class HtttpClientComponent {
     }else{
       alert("No se ha indicado un valor para alguno de los campos");
     }
+  }
+
+  modificarArticulo(a: ArticuloClass){
+    let valorAModificar = prompt("Que valor quieres modificar (sin accentos ni mayusculas)?");
+    let nuevoValor = prompt("Cual es el nuevo valor");
+
+    if(valorAModificar != null){
+
+      switch(valorAModificar){
+        case "nombre":
+          a.nombre = String(nuevoValor);
+          break;
+        case "categoria":
+          a.categoria = String(nuevoValor);
+          break;
+        case "descripcion": 
+          a.descripcion = String(nuevoValor);
+          break;
+        case "unidades":
+          a.unidades = Number(nuevoValor);
+          break;
+        case "precio":
+          a.precio = Number(nuevoValor);
+          break;
+        default:
+          alert("El valor a modificar no es correcto");
+          break;
+      }
+      
+      this.http.putArticulo(a).subscribe();
+      this.getData();
+    }else alert("No se ha indicado un valor a modificar");
   }
 }

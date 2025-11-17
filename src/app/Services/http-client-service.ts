@@ -27,8 +27,16 @@ export class HttpClientService {
   getByPrecio(precio: number){
     return this.http.get<ArticuloClass[]>(this.url+"/?precio_gte="+precio);
   }
+  getByCategoria(categoria: string){
+    console.log(this.url + "?categoria=" + categoria);
+    return this.http.get<ArticuloClass[]>(this.url+"?categoria="+categoria);
+  }
 
   postArticulo(articulo: ArticuloClass){
-    return this.http.post<ArticuloClass>(this.url, articulo)
+    return this.http.post<ArticuloClass>(this.url, articulo);
+  }
+
+  putArticulo(articulo: ArticuloClass){
+    return this.http.put<ArticuloClass>(this.url+"/"+String(articulo.id), articulo);
   }
 }
