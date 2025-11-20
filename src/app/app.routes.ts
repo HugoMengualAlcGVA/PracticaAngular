@@ -5,12 +5,13 @@ import { articulosComponent } from './Components/articulos-component/articulos-c
 import { FetchComponent } from './Components/fetch-component/fetch-component';
 import { ErrorComponent } from './Components/error-component/error-component';
 import { HtttpClientComponent } from './Components/htttp-client-component/htttp-client-component';
+import { articleGuard } from './guards/article-guard';
 
 export const routes: Routes = [
     {path: '', component:InicioComponent },
     {path: 'inicio', component:InicioComponent },
     {path:'tabla', component:TablaComponent },
-    {path:'articulos', component:articulosComponent },
+    {path:'articulos', component:articulosComponent, canActivate: [articleGuard] },
     {path:'fetch', component:FetchComponent },
     {path:'articulosHttp', component:HtttpClientComponent },
     {path: '**', component: ErrorComponent},
