@@ -1,8 +1,8 @@
 
-<h3>Articulos</h3>
-<div class="row row-cols-6">
+<h3>Articulos | Total:{{articulos.length}} Claros: {{articulos.length-numArticulosOscuros}}, Oscuros: {{numArticulosOscuros}}</h3>
+<div class="row row-cols-6 g-3">
     @for (articulo of articulos; track articulo.id) {
-    <div class="card col" style="margin: 2px; padding: 2px;">
+    <!-- <div class="card col" style="margin: 2px; padding: 2px;">
         <img src="assets/images/{{articulo.id}}.jpg" class="card-img" alt="Imagen movil">
         <div class="card-body">
             <h5 class="card-title">{{articulo.precio}}</h5>
@@ -15,6 +15,7 @@
         <button [class]="articulo.unidades == 0? 'btn btn-danger':'btn btn-primary'" (click)="verArticulos()">
             Comprar
         </button>
-    </div>
+    </div> -->
+    <app-articulo-card-component (cambiarAOscuro)="articulosModoOscuro($event)" [articulo]="articulo" [showBtnCambiarAOscuro]="true"></app-articulo-card-component>
     }
 </div>

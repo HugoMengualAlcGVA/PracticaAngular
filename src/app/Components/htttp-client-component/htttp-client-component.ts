@@ -3,7 +3,7 @@ import { ArticuloClass } from '../../../Models/articuloClass';
 import { HttpClientService } from '../../Services/http-client-service';
 import { CommonModule } from '@angular/common';
 import { isEmpty } from 'rxjs';
-import { ArticuloCardCompoent } from "../articulo-card-compoent/articulo-card-compoent";
+import { ArticuloCardCompoent } from "../articulo-card-component/articulo-card-component";
 
 @Component({
   selector: 'app-htttp-client-component',
