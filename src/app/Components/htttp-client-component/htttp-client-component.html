@@ -1,7 +1,5 @@
-<div class="d-flex flex-row justify-content-between align-items-center">
-    <h1>Tabla y Articulos HttpClient</h1>
-    <button (click)="anyadirElemento()" class="btn btn-success h-75">Añadir elemento</button>
-</div>
+<h1>Tabla y Articulos HttpClient</h1>
+
 <button (click)="getArticulosByPrecio()" class="btn btn-info h-75 mx-1">Buscar precio mayor a</button>
 <button (click)="getArticulosByCategoria()" class="btn btn-secondary h-75 mx-1">Buscar por categoria</button>
 
@@ -15,8 +13,6 @@
             <th scope="col">Unidades</th>
             <th scope="col">Precio</th>
             <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -28,15 +24,6 @@
                 <td>{{a.descripcion}}</td>
                 <td>{{a.unidades}}</td>
                 <td>{{a.precio | currency}}</td>
-                <td><button (click)="getArticuloById(a.id)" [class]="a.unidades == 0? 'btn bg-secondary':'btn btn-primary'">
-                    Ver
-                </button></td>
-                <td><button class="btn btn-danger" (click)="borrarArticulo(a.id)">
-                    Borrar
-                </button></td>
-                <td><button class="btn btn-warning" (click)="modificarArticulo(a)">
-                    Modificar
-                </button></td>
             </tr>
         }@empty {
             <div class="alert alert-danger">No hay articulos</div>

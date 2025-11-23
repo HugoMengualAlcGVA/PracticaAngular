@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArticuloCardCompoent } from './articulo-card-compoent';
+import { GuardAdminComponent } from './guard-admin-component';
 
-describe('ArticuloCardCompoent', () => {
-  let component: ArticuloCardCompoent;
-  let fixture: ComponentFixture<ArticuloCardCompoent>;
+describe('GuardAdminComponent', () => {
+  let component: GuardAdminComponent;
+  let fixture: ComponentFixture<GuardAdminComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ArticuloCardCompoent]
+      imports: [GuardAdminComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ArticuloCardCompoent);
+    fixture = TestBed.createComponent(GuardAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
